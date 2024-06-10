@@ -2,6 +2,17 @@ body {
   min-height: 5000px;
 }
 
+p {
+  color: #f0f0e6;
+  font-size: 16px;
+  font-family: "Quattrocento", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+}
+
 .section-one {
   background-color: #25b79f;
   height: 100vh;
@@ -13,16 +24,13 @@ body {
 }
 
 .section-one h1 {
-  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
   color: #07374a;
   font-size: 36px;
   padding-bottom: 20px;
 }
 
 .section-one p {
-  color: #f0f0e6;
   font-size: 16px;
-  font-family: "Quattrocento", sans-serif;
   text-align: center;
 }
 
@@ -34,4 +42,116 @@ body {
 .section-content.bottom {
   padding-bottom: 100px;
   padding-top: calc(50vh - 130px);
+}
+
+.section-two {
+  background-color: #07374a;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 991px) {
+  .section-two {
+    height: 100vh;
+  }
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header h2 {
+  color: #25b79f;
+  font-size: 36px;
+  padding-top: 160px;
+  padding-bottom: 56px;
+  text-align: center;
+}
+
+.section-body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 991px) {
+  .section-body {
+    flex-direction: row;
+  }
+}
+
+.section-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-box > div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 24px;
+}
+
+.image-container {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: url("/assets/profile-pic.JPG");
+  background-size: 250px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 16px;
+}
+
+.profile-description {
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+  padding-bottom: 32px;
+}
+
+.tools-section-subheading {
+  color: #f0f0e6;
+  font-size: 24px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+li {
+  color: #25b79f;
+  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.portfolio-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  height: 100px;
+}
+
+.link-to-portfolio {
+  font-family: "Quattrocento", sans-serif;
+  color: #25b79f;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.down-arrow {
+  font-size: 20px;
+  font-weight: bolder;
 }
