@@ -130,6 +130,19 @@ h2 {
   text-align: center;
 }
 
+.tools-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+@media (min-width: 991px) {
+  .tools-list {
+    flex-direction: row;
+  }
+}
+
 li {
   color: #25b79f;
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
