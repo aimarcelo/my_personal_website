@@ -2,10 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  min-height: 5000px;
-}
-
 p {
   color: #f0f0e6;
   font-size: 16px;
@@ -13,8 +9,13 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h4 {
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+}
+
+.section {
+  min-height: 768px;
 }
 
 .section-one {
@@ -68,7 +69,8 @@ h2 {
   flex-direction: column;
 }
 
-.section-header h2 {
+.section-header h2,
+h4 {
   color: #25b79f;
   font-size: 36px;
   padding-top: 160px;
@@ -171,4 +173,48 @@ li {
 .down-arrow {
   font-size: 20px;
   font-weight: bolder;
+}
+
+.section-three {
+  background-color: #25b79f;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h4 {
+  color: #07374a;
+  font-size: 36px;
+  padding-top: 160px;
+  padding-bottom: 56px;
+  text-align: center;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-description {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.proj-image {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+@media (min-width: 991px) {
+  .project:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .project:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 }
