@@ -336,15 +336,12 @@ footer.section-four {
 
 .section-four .email-container {
   padding-bottom: 16px;
+  text-align: center;
+  line-height: 16px;
 }
 
 .section-four .email-container a {
-  text-decoration: none;
   color: unset;
-}
-
-.section-four .email-container a:hover {
-  text-decoration: underline;
 }
 
 .section-four .find-me-text {
@@ -354,16 +351,35 @@ footer.section-four {
 
 .section-four .contact-row {
   display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .section-four .contact-row {
+    flex-direction: row;
+  }
 }
 
 .section-four .app-container {
   display: flex;
-  padding: 0px 16px;
+  padding: 8px 16px;
   justify-content: center;
   align-items: center;
 }
 
-.section-four .app-icon svg {
+.section-four .app-container > .app-text {
+  text-decoration: none;
+  color: #25b79f;
+  font-size: 16px;
+  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.section-four .app-container:hover > .app-text {
+  color: white;
+}
+
+.section-four .app-container > .app-icon > svg {
   height: 16px;
   width: 16px;
   margin-right: 2px;
@@ -372,17 +388,6 @@ footer.section-four {
   cursor: pointer;
 }
 
-.section-four .app-container .app-text {
-  text-decoration: none;
-  color: #25b79f;
-  font-size: 16px;
-  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
-  cursor: pointer;
-}
-
-.section-four .app-container:hover .app-text {
-  color: white;
-}
-.section-four .app-container:hover .app-icon-svg g {
+.section-four .app-container:hover > .app-icon-svg g {
   fill: white;
 }
