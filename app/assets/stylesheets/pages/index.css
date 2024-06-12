@@ -10,19 +10,28 @@ p {
 
 h1,
 h2,
-h4 {
+h4,
+h5,
+h6 {
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
 }
 
 .section {
-  min-height: 768px;
+  padding: 72px 48px;
+  display: flex;
+}
+
+@media (min-width: 991px) {
+  .section {
+    padding: 108px 48px;
+    height: 100vh;
+  }
 }
 
 .section-one {
   background-color: #25b79f;
-  height: 100vh;
   width: 100vw;
-  display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
@@ -45,36 +54,26 @@ h4 {
 }
 
 .section-content.bottom {
-  padding-bottom: 100px;
   padding-top: calc(50vh - 130px);
 }
 
 .section-two {
   background-color: #07374a;
-  height: auto;
-  width: 100vw;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-@media (min-width: 991px) {
-  .section-two {
-    height: 100vh;
-  }
 }
 
 .section-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .section-header h2,
 h4 {
   color: #25b79f;
   font-size: 36px;
-  padding-top: 160px;
-  padding-bottom: 56px;
+  padding-bottom: 48px;
   text-align: center;
 }
 
@@ -107,7 +106,7 @@ h4 {
   padding: 0px 24px;
 }
 
-.image-container {
+.profile-image-container {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -158,14 +157,13 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
-  height: 100px;
 }
 
 .link-to-portfolio {
   font-family: "Quattrocento", sans-serif;
   color: #25b79f;
   font-size: 18px;
+  padding: 24px;
   text-align: center;
   text-decoration: none;
 }
@@ -177,9 +175,7 @@ li {
 
 .section-three {
   background-color: #25b79f;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
+  height: auto;
   flex-direction: column;
   align-items: center;
 }
@@ -187,26 +183,108 @@ li {
 h4 {
   color: #07374a;
   font-size: 36px;
-  padding-top: 160px;
-  padding-bottom: 56px;
+  padding-bottom: 48px;
   text-align: center;
 }
 
 .project {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.proj-description {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
+.proj-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.proj-title-container,
+.proj-description,
+.proj-tools {
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px;
+}
+
+.proj-title {
+  font-size: 18px;
+  color: #07374a;
+  text-align: center;
+}
+
+.proj-tools {
+  padding-bottom: 12px;
+}
+
+.proj-details button {
+  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  color: #07374a;
+  padding: 6px 12px;
+  border: 1px solid #07374a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.proj-details button:hover {
+  background-color: #07374a;
+  color: white;
+}
+
+.proj-preview {
+  padding: 12px;
+  background: #07374a;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 24px;
+}
+
+.proj-image-container {
+  height: 300px;
+  width: 250px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.window-buttons {
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.window-button {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 4px;
 }
 
 .proj-image {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+
+.proj-image-1 {
+  background-image: url("/assets/rock-paper-scissors-3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.proj-image-2 {
+  background-image: url("/assets/calculator-3.png");
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 @media (min-width: 991px) {
@@ -217,4 +295,84 @@ h4 {
   .project:nth-child(even) {
     flex-direction: row-reverse;
   }
+
+  .project {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-three {
+    height: 100vh;
+  }
+  .section-project {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .proj-details {
+    width: 280px;
+  }
+
+  .proj-text {
+    line-height: 28px;
+  }
+}
+
+footer {
+  background-color: #07374a;
+  height: 450px;
+  display: block;
+  align-items: center;
+}
+
+h6 {
+  color: #25b79f;
+  font-size: 36px;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.email-container {
+  padding-bottom: 16px;
+}
+
+.find-me-text {
+  color: #25b79f;
+  padding-bottom: 36px;
+}
+
+.contact-row {
+  display: flex;
+}
+
+.app-container {
+  display: flex;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-icon svg {
+  height: 16px;
+  width: 16px;
+  margin-right: 2px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.app-container p {
+  color: #25b79f;
+  font-size: 16px;
+  font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.app-container:hover .app-text {
+  color: white;
+}
+.app-container:hover .app-icon-svg g {
+  fill: white;
 }
