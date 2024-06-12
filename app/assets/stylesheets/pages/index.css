@@ -8,17 +8,36 @@ p {
   font-family: "Quattrocento", sans-serif;
 }
 
-h1,
-h2,
-h4,
-h5,
-h6 {
+.header,
+.subheader {
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+}
+
+.header {
+  font-size: 36px;
+  padding-bottom: 48px;
 }
 
 .section {
   padding: 72px 48px;
   display: flex;
+  flex-direction: column;
+}
+
+.section:nth-child(odd) {
+  background-color: #25b79f;
+  align-items: center;
+}
+
+.section:nth-child(even) {
+  background-color: #07374a;
+}
+
+.section:nth-child(even) .header {
+  color: #25b79f;
+  font-size: 36px;
+  padding-bottom: 48px;
+  text-align: center;
 }
 
 @media (min-width: 991px) {
@@ -28,56 +47,50 @@ h6 {
   }
 }
 
-.section-one {
-  background-color: #25b79f;
-  width: 100vw;
-  height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.section-one h1 {
-  color: #07374a;
-  font-size: 36px;
-  padding-bottom: 20px;
-}
-
-.section-one p {
-  font-size: 16px;
+.section > .header {
+  color: #25b79f;
+  padding-bottom: 48px;
   text-align: center;
 }
 
-.section-content > .chevron-down {
-  color: #07374a;
-  font-size: 24px;
-}
-
-.section-content.bottom {
-  padding-top: calc(50vh - 130px);
-}
-
-.section-two {
-  background-color: #07374a;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.section-content {
+.section > .section-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.section-header h2,
-h4 {
-  color: #25b79f;
-  font-size: 36px;
-  padding-bottom: 48px;
+/* custom styles for section-one */
+
+.section-one {
+  height: 100vh;
+  justify-content: flex-end;
+}
+
+.section:nth-child(odd) .header {
+  color: #07374a;
   text-align: center;
 }
 
-.section-body {
+.section-one p {
+  text-align: center;
+}
+
+.section-one .header {
+  padding-bottom: 20px;
+}
+
+.section-one > .section-content > .chevron-down {
+  color: #07374a;
+  font-size: 24px;
+}
+
+.section-one > .section-content.bottom {
+  padding-top: calc(50vh - 130px);
+}
+
+/* custom styles for section-two */
+
+.section-two .section-body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -85,12 +98,12 @@ h4 {
 }
 
 @media (min-width: 991px) {
-  .section-body {
+  .section-two .section-body {
     flex-direction: row;
   }
 }
 
-.section-box {
+.section-two .section-box {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -98,7 +111,7 @@ h4 {
   align-items: center;
 }
 
-.section-box > div {
+.section-two .section-box > div {
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -106,7 +119,7 @@ h4 {
   padding: 0px 24px;
 }
 
-.profile-image-container {
+.section-two .profile-image-container {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -117,21 +130,21 @@ h4 {
   margin-bottom: 16px;
 }
 
-.profile-description {
+.section-two .profile-description {
   font-size: 20px;
   text-align: center;
   line-height: 1.5;
   padding-bottom: 32px;
 }
 
-.tools-section-subheading {
+.section-two .tools-section-subheading {
   color: #f0f0e6;
   font-size: 24px;
   padding-bottom: 24px;
   text-align: center;
 }
 
-.tools-list {
+.section-two .tools-list {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
@@ -139,12 +152,12 @@ h4 {
 }
 
 @media (min-width: 991px) {
-  .tools-list {
+  .section-two .tools-list {
     flex-direction: row;
   }
 }
 
-li {
+.section-two .tools-section li {
   color: #25b79f;
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -153,13 +166,13 @@ li {
   font-weight: 700;
 }
 
-.portfolio-link-container {
+.section-two .portfolio-link-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.link-to-portfolio {
+.section-two > .portfolio-link-container > .link-to-portfolio {
   font-family: "Quattrocento", sans-serif;
   color: #25b79f;
   font-size: 18px;
@@ -168,33 +181,25 @@ li {
   text-decoration: none;
 }
 
-.down-arrow {
+.section-two > .portfolio-link-container > .link-to-portfolio > .down-arrow {
   font-size: 20px;
   font-weight: bolder;
 }
 
+/* custom styles for section-three */
+
 .section-three {
-  background-color: #25b79f;
   height: auto;
-  flex-direction: column;
-  align-items: center;
 }
 
-h4 {
-  color: #07374a;
-  font-size: 36px;
-  padding-bottom: 48px;
-  text-align: center;
-}
-
-.project {
+.section-three .project {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.proj-details {
+.section-three .proj-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,25 +207,25 @@ h4 {
   text-align: center;
 }
 
-.proj-title-container,
-.proj-description,
-.proj-tools {
+.section-three .proj-title-container,
+.section-three .proj-description,
+.section-three .proj-tools {
   justify-content: center;
   align-items: center;
   padding: 8px 0px;
 }
 
-.proj-title {
+.section-three .proj-title {
   font-size: 18px;
   color: #07374a;
   text-align: center;
 }
 
-.proj-tools {
+.section-three .proj-tools {
   padding-bottom: 12px;
 }
 
-.proj-details button {
+.section-three .proj-details button {
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400px;
@@ -234,12 +239,12 @@ h4 {
   cursor: pointer;
 }
 
-.proj-details button:hover {
+.section-three .proj-details button:hover {
   background-color: #07374a;
   color: white;
 }
 
-.proj-preview {
+.section-three .proj-preview {
   padding: 12px;
   background: #07374a;
   display: flex;
@@ -248,7 +253,7 @@ h4 {
   margin: 24px;
 }
 
-.proj-image-container {
+.section-three .proj-image-container {
   height: 300px;
   width: 250px;
   border-radius: 5px;
@@ -256,12 +261,12 @@ h4 {
   background-color: transparent;
 }
 
-.window-buttons {
+.section-three .window-buttons {
   display: flex;
   padding-bottom: 8px;
 }
 
-.window-button {
+.section-three .window-buttons > .window-button {
   height: 14px;
   width: 14px;
   border-radius: 50%;
@@ -269,34 +274,34 @@ h4 {
   margin-right: 4px;
 }
 
-.proj-image {
+.section-three .proj-image {
   height: 100%;
   width: 100%;
   background-position: center;
 }
 
-.proj-image-1 {
+.section-three .proj-image-1 {
   background-image: url("/assets/rock-paper-scissors-3.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.proj-image-2 {
+.section-three .proj-image-2 {
   background-image: url("/assets/calculator-3.png");
   background-size: contain;
   background-repeat: repeat;
 }
 
 @media (min-width: 991px) {
-  .project:nth-child(odd) {
+  .section-three .project:nth-child(odd) {
     flex-direction: row;
   }
 
-  .project:nth-child(even) {
+  .section-three .project:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  .project {
+  .section-three .project {
     justify-content: space-around;
   }
 }
@@ -305,56 +310,60 @@ h4 {
   .section-three {
     height: 100vh;
   }
-  .section-project {
+  .section-three .section-project {
     display: flex;
     flex-direction: row;
   }
 
-  .proj-details {
+  .section-three .proj-details {
     width: 280px;
   }
 
-  .proj-text {
+  .section-three .proj-text {
     line-height: 28px;
   }
 }
 
-footer {
+/* Custom styles for section-four (footer) */
+
+footer.section-four {
   background-color: #07374a;
+  justify-content: space-between;
   height: 450px;
   display: block;
   align-items: center;
 }
 
-h6 {
-  color: #25b79f;
-  font-size: 36px;
-  padding-top: 100px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.email-container {
+.section-four .email-container {
   padding-bottom: 16px;
 }
 
-.find-me-text {
+.section-four .email-container a {
+  text-decoration: none;
+  color: unset;
+}
+
+.section-four .email-container a:hover {
+  text-decoration: underline;
+}
+
+.section-four .find-me-text {
   color: #25b79f;
   padding-bottom: 36px;
 }
 
-.contact-row {
+.section-four .contact-row {
   display: flex;
 }
 
-.app-container {
+.section-four .app-container {
   display: flex;
   padding: 0px 16px;
   justify-content: center;
   align-items: center;
 }
 
-.app-icon svg {
+.section-four .app-icon svg {
   height: 16px;
   width: 16px;
   margin-right: 2px;
@@ -363,16 +372,17 @@ h6 {
   cursor: pointer;
 }
 
-.app-container p {
+.section-four .app-container .app-text {
+  text-decoration: none;
   color: #25b79f;
   font-size: 16px;
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
   cursor: pointer;
 }
 
-.app-container:hover .app-text {
+.section-four .app-container:hover .app-text {
   color: white;
 }
-.app-container:hover .app-icon-svg g {
+.section-four .app-container:hover .app-icon-svg g {
   fill: white;
 }
